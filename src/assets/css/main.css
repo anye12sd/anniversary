@@ -1,3 +1,11 @@
+@font-face {
+    font-family: fanbiaosong;
+    src: url("../font/fanbiaosong.woff") format("woff"),
+    url("../font/fanbiaosong.ttf") format("truetype"),
+    url("../font/fanbiaosong.svg") format("svg"),
+    url("../font/fanbiaosong.otf") format("opentype");
+}
+
 body {
     min-height: 100vh;
     display: -webkit-box;
@@ -17,6 +25,11 @@ body {
     cursor: -webkit-image-set(url(../img/cursor.png) 1x, url(../img/cursor.png) 2x) 0 0, pointer;
 }
 
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
 .flex {
     display: flex;
 }
@@ -25,11 +38,60 @@ body {
     flex: 1;
 }
 
+.header-text {
+    letter-spacing: .0975vw;
+    font-size: 2.1rem;
+    line-height: 3.4rem;
+    margin-top: -0.5rem;
+    margin-bottom: -0.7rem;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 10;
+    transform: rotate(180deg);
+}
+
+.header-text2 {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(-135deg, #000, #fff);
+    animation: loading 3s infinite;
+    background-blend-mode: hard-light;
+    background-size: 200%;
+    color: white;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .0975vw;
+    font-size: 60px !important;
+    margin-top: -0.5rem;
+    margin-bottom: -0.7rem;
+    position: fixed;
+    top: 60px;
+    right: 300px;
+    z-index: 10;
+    transform: rotate(180deg);
+}
+
+@keyframes loading {
+    0% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: -100%;
+    }
+
+}
+
+.project-list {
+    padding: 0 1.5rem 7.8vw;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
 .project-list, .project-list .project-list__col {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
 }
 
 .project-list .project-list__col {
@@ -70,12 +132,14 @@ body {
     cursor: url(../img/enlarge-cursor.png) 0 0, pointer;
     cursor: -webkit-image-set(url(../img/enlarge-cursor.png) 1x, url(../img/enlarge-cursor.png) 2x) 0 0, pointer;
 }
+
 .project-preview .project-preview__text {
     opacity: 0;
     will-change: opacity;
     -webkit-transition: opacity .2s ease;
     transition: opacity .2s ease;
 }
+
 .project-preview__text {
     position: absolute;
     z-index: 4;
@@ -88,6 +152,12 @@ body {
     pointer-events: none;
 }
 
+.another-cursor {
+    cursor: url(../img/pointer.png) 0 0, pointer;
+    cursor: url(../img/pointer.png) 0 0, pointer;
+    cursor: -webkit-image-set(url(../img/pointer.png) 1x, url(../img/pointer.png) 2x) 0 0, pointer;
+}
+
 .project-preview .project-preview__text {
     font-size: 2.7rem;
     line-height: 2.85rem;
@@ -96,7 +166,7 @@ body {
     margin-bottom: -0.4rem;
 }
 
-.project-preview:hover .change-color, .project-preview:hover .project-preview__text{
+.project-preview:hover .change-color, .project-preview:hover .project-preview__text {
     opacity: 1;
 }
 
@@ -111,7 +181,36 @@ body {
     transition: opacity .5s ease;
 }
 
+.time {
+    font-size: 2.7rem;
+    line-height: 2.85rem;
+    letter-spacing: .1rem;
+    margin-top: -0.6rem;
+    margin-bottom: -0.4rem;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 10;
+}
+
+@media screen and (min-width: 1150px) {
+    html {
+        font-size: 10px;
+    }
+}
+
 @media screen and (min-width: 1024px) {
+    html {
+        font-size: 9px;
+    }
+
+    .header-text {
+        font-size: 1.95vw;
+        line-height: 3.25vw;
+        margin-top: -0.78vw;
+        margin-bottom: -0.91vw;
+    }
+
     .project-list {
         padding: 0 2.1645vw 3.9vw;
     }
@@ -132,9 +231,36 @@ body {
         margin-top: -0.585vw;
         margin-bottom: -0.39vw;
     }
+
+    .time {
+        font-size: 2.405vw;
+        line-height: 2.405vw;
+        letter-spacing: .065vw;
+        margin-top: -0.585vw;
+        margin-bottom: -0.39vw;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .project-list {
+        padding: 0 2.5rem 3.9vw;
+    }
+
+    .project-list .project-list__col {
+        width: 50%;
+        padding: 11.7vw 2.5rem 0;
+    }
+
+    .project-list .project-list__col:last-child {
+        padding-top: 31.2vw;
+    }
 }
 
 @media screen and (min-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+
     .project-preview {
         width: 80%;
     }
