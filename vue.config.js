@@ -10,7 +10,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/v4': {
-                target: 'http://localhost:3000/',
+                target: 'http://42.192.68.235:3000',
                 changeOrigin: true,
                 ws: true,
                 pathRewrite: {
